@@ -1,10 +1,14 @@
 {
-  "name": "harsh-date-picker",
+  "name": "awesome-date-picker",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshan89/date-picker.git"
+  },
   "files": [
     "dist",
     "LICENSE",
