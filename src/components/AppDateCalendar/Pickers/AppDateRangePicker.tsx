@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { getBoxPosition } from '../../../utils/layout'
 
 interface Props {
-  children: ReactNode
+  icon: ReactNode
   id: number
   onRangeSelect: (startDate: Date, endDate: Date, key: number) => void
   validMaxDate?: Date | undefined
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const AppDateRangePicker: FC<Props> = ({
-  children,
+  icon,
   id,
   onRangeSelect,
   validMaxDate,
@@ -72,7 +72,7 @@ const AppDateRangePicker: FC<Props> = ({
   return (
     //@ts-ignore
     <Box cursor='pointer' ref={ref} zIndex={1}>
-      <Box onClick={onCalenderIconClick}>{children}</Box>
+      <Box onClick={onCalenderIconClick}>{icon}</Box>
       {isVisible && (
         <Box
           pos='absolute'
