@@ -1,5 +1,10 @@
 # Awesome date picker
 
+## Installation 
+_npm i awesome-date-picker --save_
+
+# How to use Awesome date picker
+
 ## Date picker
 
 <img width="243" alt="Capture" src="https://github.com/harshan89/date-picker/assets/9652826/68fca3c1-e885-460f-99c3-70262000d35f">
