@@ -1,0 +1,1 @@
+{"version":3,"file":"AppText.js","sourceRoot":"","sources":["../../../../src/components/AppText/AppText.tsx"],"names":[],"mappings":";AAAA,OAAO,KAAK,MAAM,OAAO,CAAA;AACzB,OAAO,EAAE,IAAI,EAAa,MAAM,kBAAkB,CAAA;AAOlD,IAAM,OAAO,GAAgC,UAAC,EAA4B;IAA1B,IAAA,QAAQ,cAAA,EAAK,IAAI,cAAnB,YAAqB,CAAF;IAC/D,OAAO,oBAAC,IAAI,eAAK,IAAI,GAAG,QAAQ,CAAQ,CAAA;AAC1C,CAAC,CAAA;AAED,eAAe,OAAO,CAAA"}
