@@ -1,8 +1,9 @@
 {
+  "baseUrl": "./src",
   "include": ["./src"],
   "exclude": ["./dist", "./node_modules"],
   "compilerOptions": {
-    "module": "esnext", 
+    "module": "esnext",
     "lib": ["dom", "esnext"],
     "importHelpers": true,
     "declaration": true,
