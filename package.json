@@ -1,65 +1,31 @@
 {
   "name": "awesome-date-picker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "version": "0.1.0",
+  "description": "Demo page of awesome-date-picker",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir docs --public-url .",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harshan89/date-picker.git"
   },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run test && npm run prettier && npm run lint"
-  },
-  "author": "Harshan Morawaka",
-  "license": "ISC",
+  "author": "gapon2401",
+  "license": "MIT",
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.2",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.1"
-  },
-  "dependencies": {
-    "@chakra-ui/react": "^2.8.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@testing-library/react": "^14.0.0",
-    "@types/jest": "^29.5.3",
-    "@types/react": "^18.2.20",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "eslint": "^8.47.0",
-    "eslint-plugin-react": "^7.33.1",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "framer-motion": "^10.15.2",
-    "jest": "^29.6.2",
-    "jest-canvas-mock": "^2.5.2",
-    "jest-environment-jsdom": "^29.6.2",
+    "my-react-typescript-package": "^0.1.0",
+    "parcel": "^2.6.2",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.1.6"
-  },
-  "peerDependencies": {
-    "react": ">=18"
-  },
-  "keywords": [
-    "react",
-    "typescript",
-    "date picker",
-    "date range picker"
-  ]
+    "typescript": "^4.7.4"
+  }
 }
