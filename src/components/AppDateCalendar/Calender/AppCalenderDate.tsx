@@ -39,6 +39,7 @@ const AppCalenderDate: FC<Props> = ({
             (date <= dateRange?.startDate && date >= tempRangeEndDate)
           )
         }
+        return false
       } catch (e) {
         console.log(e)
         return false

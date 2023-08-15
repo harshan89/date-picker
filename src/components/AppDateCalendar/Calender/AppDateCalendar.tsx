@@ -47,15 +47,6 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
     [selectedMonth],
   )
 
-  const handleDateClick = useCallback((date: Date) => {
-    setFullDate(date)
-    onDateSelect(date)
-  }, [])
-
-  const onMouseOverDate = useCallback((date: Date) => {
-    // console.log('onMouseOverDate ', date);
-  }, [])
-
   const onMonthChangeWithArrow = useCallback(
     (diff: number) => {
       if (selectedMonth !== undefined && diff) {
@@ -98,7 +89,7 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
       const previousMonthStartDate = sub(monthStartFullDate, {
         months: 1,
       })
-      let previousMonthEndDate = endOfMonth(previousMonthStartDate).getDate()
+      const previousMonthEndDate = endOfMonth(previousMonthStartDate).getDate()
       const monthEndDayInWeek = getDay(monthEndFullDate)
 
       for (let i = monthStartDayInWeek; i > 0; i--) {
@@ -142,6 +133,7 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
 
       return days
     }
+    return null
   }
 
   return (
