@@ -21,13 +21,6 @@ var AppDateCalendar = function (_a) {
     var getMonthName = useCallback(function (month) {
         return MONTH_NAMES[month];
     }, [selectedMonth]);
-    var handleDateClick = useCallback(function (date) {
-        setFullDate(date);
-        onDateSelect(date);
-    }, []);
-    var onMouseOverDate = useCallback(function (date) {
-        // console.log('onMouseOverDate ', date);
-    }, []);
     var onMonthChangeWithArrow = useCallback(function (diff) {
         if (selectedMonth !== undefined && diff) {
             var _selectedMonth = selectedMonth;
@@ -79,8 +72,9 @@ var AppDateCalendar = function (_a) {
             }
             return days;
         }
+        return null;
     };
-    return (React.createElement(Box, { w: '310px', h: '300px', bgColor: 'bg-default', pl: '10px', pr: '10px', pt: '15px', pb: '15px' },
+    return (React.createElement(Box, { w: '310px', h: '300px', bgColor: '#262626', pl: '10px', pr: '10px', pt: '15px', pb: '15px' },
         React.createElement(HStack, { justify: 'space-between', pb: '15px', pl: '10px', pr: '10px' },
             React.createElement(AppIcon, { name: 'calenderDoubleArrow', fill: 'left-menu-icon-color', _hover: { fill: 'left-menu-icon-hover-color' }, width: '12px', height: '12px', cursor: 'pointer', onClick: function () { return onYearChangeWithArrow(-1); }, transform: 'rotate(180deg)' }),
             React.createElement(AppIcon, { name: 'chevronLeft', fill: 'left-menu-icon-color', _hover: { fill: 'left-menu-icon-hover-color' }, width: '12px', height: '12px', cursor: 'pointer', onClick: function () { return onMonthChangeWithArrow(-1); } }),
@@ -90,7 +84,7 @@ var AppDateCalendar = function (_a) {
             React.createElement(AppIcon, { name: 'chevronRight', fill: 'left-menu-icon-color', _hover: { fill: 'left-menu-icon-hover-color' }, width: '12px', height: '12px', cursor: 'pointer', onClick: function () { return onMonthChangeWithArrow(1); } }),
             React.createElement(AppIcon, { name: 'calenderDoubleArrow', fill: 'left-menu-icon-color', _hover: { fill: 'left-menu-icon-hover-color' }, width: '12px', height: '12px', cursor: 'pointer', onClick: function () { return onYearChangeWithArrow(1); } })),
         React.createElement(Grid, { templateColumns: 'repeat(7, 1fr)', gap: 2 },
-            DAYS.map(function (day, index) { return (React.createElement(AppText, { textAlign: 'center', color: 'gray-text', key: "day-".concat(index), fontWeight: 700, fontSize: '13px', lineHeight: '26px' }, day)); }),
+            DAYS.map(function (day, index) { return (React.createElement(AppText, { textAlign: 'center', color: '#fff', key: "day-".concat(index), fontWeight: 700, fontSize: '13px', lineHeight: '26px' }, day)); }),
             renderCalendarDays())));
 };
 export default AppDateCalendar;
