@@ -3,7 +3,7 @@ export const globalStyles = {
   // useSystemColorMode: false,
   global: {
     body: {
-      background: "bg-default",
+      background: 'bg-default',
     },
   },
-};
+}
