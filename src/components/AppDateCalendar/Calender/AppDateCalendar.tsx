@@ -141,8 +141,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
       <HStack justify='space-between' pb='15px' pl='10px' pr='10px'>
         <AppIcon
           name='calenderDoubleArrow'
-          fill={'left-menu-icon-color'}
-          _hover={{ fill: 'left-menu-icon-hover-color' }}
+          fill='white'
+          _hover={{ fill: '#F7CC45' }}
           width='12px'
           height='12px'
           cursor={'pointer'}
@@ -151,8 +151,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         />
         <AppIcon
           name={'chevronLeft'}
-          fill={'left-menu-icon-color'}
-          _hover={{ fill: 'left-menu-icon-hover-color' }}
+          fill='white'
+          _hover={{ fill: '#F7CC45' }}
           width='12px'
           height='12px'
           cursor='pointer'
@@ -173,8 +173,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         </AppText>
         <AppIcon
           name={'chevronRight'}
-          fill={'left-menu-icon-color'}
-          _hover={{ fill: 'left-menu-icon-hover-color' }}
+          fill='white'
+          _hover={{ fill: '#F7CC45' }}
           width='12px'
           height='12px'
           cursor={'pointer'}
@@ -182,8 +182,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         />
         <AppIcon
           name='calenderDoubleArrow'
-          fill={'left-menu-icon-color'}
-          _hover={{ fill: 'left-menu-icon-hover-color' }}
+          fill='white'
+          _hover={{ fill: '#F7CC45' }}
           width='12px'
           height='12px'
           cursor={'pointer'}
