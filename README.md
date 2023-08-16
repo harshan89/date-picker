@@ -1,5 +1,7 @@
 # Awesome date picker
 
+[Live Demo](https://harshan89.github.io/date-picker)
+
 ## Installation 
 _npm i awesome-date-picker --save_
 
