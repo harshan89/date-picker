@@ -7,7 +7,7 @@ _npm i awesome-date-picker --save_
 
 ## Date picker
 
-<img width="243" alt="Capture" src="https://github.com/harshan89/date-picker/assets/9652826/68fca3c1-e885-460f-99c3-70262000d35f">
+<img width="243" alt="awesome-date-picker" src="https://github.com/harshan89/date-picker/assets/9652826/68fca3c1-e885-460f-99c3-70262000d35f">
 
 ### Props
 
@@ -30,7 +30,7 @@ This is optional prop this will be usefull if you need to pre define where to re
 
 ## Date range picker
 
-<img width="451" alt="range-picker" src="https://github.com/harshan89/date-picker/assets/9652826/c12ab264-690a-4e5a-b0a8-1c27b5f469b4">
+<img width="453" alt="awedome-date-range-picker" src="https://github.com/harshan89/date-picker/assets/9652826/ecd193d9-e645-4ea1-b397-654eabfadda3">
 
 #### onRangeSelect
 Callback function on date select
