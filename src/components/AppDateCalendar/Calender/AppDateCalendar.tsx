@@ -137,7 +137,7 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
   }
 
   return (
-    <Box w='310px' h='300px' bgColor='bg-default' pl='10px' pr='10px' pt='15px' pb='15px'>
+    <Box w='310px' h='300px' bgColor='#262626' pl='10px' pr='10px' pt='15px' pb='15px'>
       <HStack justify='space-between' pb='15px' pl='10px' pr='10px'>
         <AppIcon
           name='calenderDoubleArrow'
@@ -194,7 +194,7 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         {DAYS.map((day, index) => (
           <AppText
             textAlign='center'
-            color={'gray-text'}
+            color='#fff'
             key={`day-${index}`}
             fontWeight={700}
             fontSize='13px'

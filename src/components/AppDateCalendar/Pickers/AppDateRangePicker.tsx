@@ -1,10 +1,12 @@
 import React from 'react'
-import { Box, HStack, useOutsideClick } from '@chakra-ui/react'
+import { Box, ChakraProvider, HStack, useOutsideClick } from '@chakra-ui/react'
 import { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import AppDateCalendar from '../Calender/AppDateCalendar'
 import { addMonths } from 'date-fns'
 import { motion } from 'framer-motion'
 import { getBoxPosition } from '../../../utils/layout'
+import theme from '../../../theme'
+import Fonts from '../../../theme/Fonts'
 
 interface Props {
   icon: ReactNode
@@ -70,46 +72,49 @@ const AppDateRangePicker: FC<Props> = ({
   }
 
   return (
-    //@ts-ignore
-    <Box cursor='pointer' ref={ref} zIndex={1}>
-      <Box onClick={onCalenderIconClick}>{icon}</Box>
-      {isVisible && (
-        <Box
-          pos='absolute'
-          bgColor='overlay-bg'
-          w='600px'
-          h='312px'
-          padding='6px'
-          boxShadow='0px 0px 5px rgba(0, 0, 0, 0.3)'
-          borderRadius='4px'
-          top={pos.y}
-          left={pos.x}
-          as={motion.div}
-          initial={{ opacity: 0, scale: 0, y: '-300px' }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition='.2s'
-        >
-          <HStack gap={0} spacing={0}>
-            <AppDateCalendar
-              onDateSelect={(date) => onSelectDate(date)}
-              dateRange={{ startDate, endDate }}
-              tempRangeEndDate={tempRangeEndDate}
-              setTempRangeEndDate={setTempRangeEndDate}
-              initDate={initialDate1}
-              validMaxDate={validMaxDate}
-            />
-            <AppDateCalendar
-              onDateSelect={(date) => onSelectDate(date)}
-              dateRange={{ startDate, endDate }}
-              tempRangeEndDate={tempRangeEndDate}
-              setTempRangeEndDate={setTempRangeEndDate}
-              initDate={initialDate2}
-              validMaxDate={validMaxDate}
-            />
-          </HStack>
-        </Box>
-      )}
-    </Box>
+    <ChakraProvider theme={theme}>
+      <Fonts />
+      {/* @ts-ignore */}
+      <Box cursor='pointer' ref={ref} zIndex={1}>
+        <Box onClick={onCalenderIconClick}>{icon}</Box>
+        {isVisible && (
+          <Box
+            pos='absolute'
+            bgColor='overlay-bg'
+            w='600px'
+            h='312px'
+            padding='6px'
+            boxShadow='0px 0px 5px rgba(0, 0, 0, 0.3)'
+            borderRadius='4px'
+            top={pos.y}
+            left={pos.x}
+            as={motion.div}
+            initial={{ opacity: 0, scale: 0, y: '-300px' }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition='.2s'
+          >
+            <HStack gap={0} spacing={0}>
+              <AppDateCalendar
+                onDateSelect={(date) => onSelectDate(date)}
+                dateRange={{ startDate, endDate }}
+                tempRangeEndDate={tempRangeEndDate}
+                setTempRangeEndDate={setTempRangeEndDate}
+                initDate={initialDate1}
+                validMaxDate={validMaxDate}
+              />
+              <AppDateCalendar
+                onDateSelect={(date) => onSelectDate(date)}
+                dateRange={{ startDate, endDate }}
+                tempRangeEndDate={tempRangeEndDate}
+                setTempRangeEndDate={setTempRangeEndDate}
+                initDate={initialDate2}
+                validMaxDate={validMaxDate}
+              />
+            </HStack>
+          </Box>
+        )}
+      </Box>
+    </ChakraProvider>
   )
 }
 

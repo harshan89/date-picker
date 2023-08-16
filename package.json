@@ -27,33 +27,33 @@
   "author": "Harshan Morawaka",
   "license": "ISC",
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
     "@tsconfig/recommended": "^1.0.2",
+    "@types/jest": "^29.5.3",
+    "@types/react": "^18.2.20",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.1"
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.6.2",
+    "jest-canvas-mock": "^2.5.2",
+    "jest-environment-jsdom": "^29.6.2",
+    "prettier": "^3.0.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@testing-library/react": "^14.0.0",
-    "@types/jest": "^29.5.3",
-    "@types/react": "^18.2.20",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
     "date-fns": "^2.30.0",
-    "eslint": "^8.47.0",
-    "eslint-plugin-react": "^7.33.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^10.15.2",
-    "jest": "^29.6.2",
-    "jest-canvas-mock": "^2.5.2",
-    "jest-environment-jsdom": "^29.6.2",
     "react": ">=18",
-    "react-dom": "^18.2.0",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.1.6"
+    "react-dom": "^18.2.0"
   },
   "peerDependencies": {
     "react": ">=18"

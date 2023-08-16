@@ -13,6 +13,7 @@ var AppCalenderDate = function (_a) {
                     return ((date >= (dateRange === null || dateRange === void 0 ? void 0 : dateRange.startDate) && date <= tempRangeEndDate) ||
                         (date <= (dateRange === null || dateRange === void 0 ? void 0 : dateRange.startDate) && date >= tempRangeEndDate));
                 }
+                return false;
             }
             catch (e) {
                 console.log(e);
