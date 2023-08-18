@@ -1,4 +1,4 @@
-# Awesome date picker
+# Date picker and Date range picker for React js
 
 [Live Demo](https://harshan89.github.io/date-picker)
 
@@ -17,7 +17,7 @@ _npm i awesome-date-picker --save_
 Callback function on date select
 
 #### children
-The icon need to pass for calander render
+The icon need to pass for calender render
 
 #### prePos
 This is optional prop this will be usefull if you need to pre define where to render the date picker.
