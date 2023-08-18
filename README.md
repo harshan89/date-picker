@@ -5,7 +5,7 @@
 ## Installation 
 _npm i awesome-date-picker --save_
 
-# How to use Awesome date picker
+# How to use
 
 ## Date picker
 
