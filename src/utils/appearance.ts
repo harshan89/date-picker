@@ -1,5 +1,5 @@
 export const lightTheme = {
-    backgroundColor: "",
+    backgroundColor: "#fff",
     borderColor: "",
     monthDateTextColor: "",
     nonMonthDateTextColor: "",
