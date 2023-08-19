@@ -7,6 +7,18 @@ import { getBoxPosition } from '../../../utils/layout'
 import theme from '../../../theme'
 import Fonts from '../../../theme/Fonts'
 
+interface Appearance {
+  backgroundColor?: string,
+  borderColor? : string,
+  monthDateTextColor?: string,
+  nonMonthDateTextColor?: string,
+  weekNameTextColor? : string,
+  arrowsColor? : string,
+  arrowsHoverColor?: string
+  dateHoverBorder?: string
+  dateHoverBackgroundColor?: string
+}
+
 interface Props {
   icon?: ReactNode
   onDateSelect: (date: Date) => void
@@ -14,6 +26,7 @@ interface Props {
     x?: number
     y?: number
   }
+  appearance?: Appearance
 }
 
 const AppDatePicker: FC<Props> = ({ icon, onDateSelect, prePos }) => {
@@ -54,8 +67,8 @@ const AppDatePicker: FC<Props> = ({ icon, onDateSelect, prePos }) => {
             // @ts-ignore
             ref={ref}
             position='absolute'
-            w='322px'
-            h='312px'
+            // w='322px'
+            // h='312px'
             top={pos.y}
             left={pos.x}
             bgColor='overlay-bg'
