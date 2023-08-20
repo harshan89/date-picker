@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, BoxProps } from '@chakra-ui/react'
 import AppText from '../../AppText/AppText'
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
+import { ColorTheme } from '../Pickers/AppDatePicker'
 
 interface Props extends BoxProps {
   handleDateClick: (date: Date) => void
@@ -15,6 +16,7 @@ interface Props extends BoxProps {
   }
   tempRangeEndDate?: Date
   setTempRangeEndDate?: Dispatch<SetStateAction<Date | undefined>>
+  localColorTheme: ColorTheme
 }
 
 const AppCalenderDate: FC<Props> = ({
@@ -26,6 +28,7 @@ const AppCalenderDate: FC<Props> = ({
   dateRange,
   setTempRangeEndDate,
   tempRangeEndDate,
+  localColorTheme
 }) => {
   const [bgColor, setBgColor] = useState('transparent')
   const [border, setBorder] = useState('1px solid transparent')
@@ -45,11 +48,11 @@ const AppCalenderDate: FC<Props> = ({
         return false
       }
     }
-    setBgColor(isInRange() ? '#F7CC45' : 'transparent')
+    setBgColor(isInRange() ? localColorTheme.dateSelectedBackgroundColor : 'transparent')
   }, [tempRangeEndDate, isSelected])
 
   const onMouseEnterDate = (date: Date) => {
-    setBorder('1px solid #fff')
+    setBorder(localColorTheme.dateHoverBorder)
     if (dateRange?.startDate) {
       setTempRangeEndDate && setTempRangeEndDate(date)
     }
@@ -65,7 +68,7 @@ const AppCalenderDate: FC<Props> = ({
 
   const onDateClickHandler = () => {
     handleDateClick(date)
-    setBgColor('#F7CC45')
+    setBgColor(localColorTheme.dateSelectedBackgroundColor)
   }
 
   return (
@@ -86,7 +89,7 @@ const AppCalenderDate: FC<Props> = ({
         fontWeight={700}
         fontSize='13px'
         lineHeight='26px'
-        color={isValidDateRange(date) ? '#fff' : '#595959'}
+        color={isValidDateRange(date) ? localColorTheme.monthDateTextColor : localColorTheme.nonMonthDateTextColor}
       >
         {day}
       </AppText>

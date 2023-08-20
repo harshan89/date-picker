@@ -5,6 +5,7 @@ import AppIcon from '../../AppIcon/AppIcon'
 import { endOfMonth, format, getDay, getMonth, getYear, sub } from 'date-fns'
 import AppCalenderDate from './AppCalenderDate'
 import AppText from '../../AppText/AppText'
+import { ColorTheme } from '../Pickers/AppDatePicker'
 
 interface AppDateCalendarProps {
   onDateSelect: (date: Date) => void
@@ -16,6 +17,7 @@ interface AppDateCalendarProps {
   validMaxDate?: Date | undefined
   tempRangeEndDate?: Date
   setTempRangeEndDate?: Dispatch<SetStateAction<Date | undefined>>
+  localColorTheme: ColorTheme
 }
 
 const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
@@ -25,6 +27,7 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
   validMaxDate,
   tempRangeEndDate,
   setTempRangeEndDate,
+  localColorTheme
 }) => {
   const [fullDate, setFullDate] = useState<Date>()
   const [selectedMonth, setSelectedMonth] = useState<number | undefined>()
@@ -117,6 +120,7 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
             tempRangeEndDate={tempRangeEndDate}
             setTempRangeEndDate={setTempRangeEndDate}
             validMaxDate={validMaxDate}
+            localColorTheme={localColorTheme}
           />,
         )
       }
@@ -137,12 +141,14 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
   }
 
   return (
+    <>
+    {localColorTheme && 
     <Box w='310px' h='300px' bgColor='#262626' pl='10px' pr='10px' pt='15px' pb='15px'>
       <HStack justify='space-between' pb='15px' pl='10px' pr='10px'>
         <AppIcon
           name='calenderDoubleArrow'
-          fill='white'
-          _hover={{ fill: '#F7CC45' }}
+          fill={localColorTheme.arrowsColor}
+          _hover={{ fill: localColorTheme.arrowsHoverColor }}
           width='12px'
           height='12px'
           cursor={'pointer'}
@@ -151,8 +157,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         />
         <AppIcon
           name={'chevronLeft'}
-          fill='white'
-          _hover={{ fill: '#F7CC45' }}
+          fill={localColorTheme.arrowsColor}
+          _hover={{ fill: localColorTheme.arrowsHoverColor }}
           width='12px'
           height='12px'
           cursor='pointer'
@@ -173,8 +179,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         </AppText>
         <AppIcon
           name={'chevronRight'}
-          fill='white'
-          _hover={{ fill: '#F7CC45' }}
+          fill={localColorTheme.arrowsColor}
+          _hover={{ fill: localColorTheme.arrowsHoverColor }}
           width='12px'
           height='12px'
           cursor={'pointer'}
@@ -182,8 +188,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         />
         <AppIcon
           name='calenderDoubleArrow'
-          fill='white'
-          _hover={{ fill: '#F7CC45' }}
+          fill={localColorTheme.arrowsColor}
+          _hover={{ fill: localColorTheme.arrowsHoverColor }}
           width='12px'
           height='12px'
           cursor={'pointer'}
@@ -205,7 +211,8 @@ const AppDateCalendar: React.FC<AppDateCalendarProps> = ({
         ))}
         {renderCalendarDays()}
       </Grid>
-    </Box>
+    </Box>}
+    </>
   )
 }
 

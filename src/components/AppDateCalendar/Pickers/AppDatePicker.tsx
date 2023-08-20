@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, ChakraProvider, useOutsideClick } from '@chakra-ui/react'
 import { FC, ReactNode, useRef, useState } from 'react'
 import AppDateCalendar from '../Calender/AppDateCalendar'
@@ -6,17 +6,19 @@ import { motion } from 'framer-motion'
 import { getBoxPosition } from '../../../utils/layout'
 import theme from '../../../theme'
 import Fonts from '../../../theme/Fonts'
+import { darkTheme, lightTheme } from '../../../utils/colorTheme'
 
-interface Appearance {
-  backgroundColor?: string,
-  borderColor? : string,
-  monthDateTextColor?: string,
-  nonMonthDateTextColor?: string,
-  weekNameTextColor? : string,
-  arrowsColor? : string,
-  arrowsHoverColor?: string
-  dateHoverBorder?: string
-  dateHoverBackgroundColor?: string
+export interface ColorTheme {
+  backgroundColor: string,
+  wrapperBackgroundColor : string,
+  monthDateTextColor: string,
+  nonMonthDateTextColor: string,
+  weekNameTextColor : string,
+  arrowsColor : string,
+  arrowsHoverColor: string
+  dateHoverBorder: string
+  dateHoverBackgroundColor: string
+  dateSelectedBackgroundColor: string
 }
 
 interface Props {
@@ -26,15 +28,22 @@ interface Props {
     x?: number
     y?: number
   }
-  appearance?: Appearance
+  colorMode?: "light" | "dark"
+  colorTheme?: ColorTheme,
 }
 
-const AppDatePicker: FC<Props> = ({ icon, onDateSelect, prePos }) => {
+const AppDatePicker: FC<Props> = ({ icon, onDateSelect, prePos, colorMode='dark', colorTheme=colorMode }) => {
   const [pos, setPos] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef()
+  const ref = useRef<any>(null)
+  const [localColorTheme, setLocalColorTheme] = useState<ColorTheme>(darkTheme)
+
+  useEffect(() => {
+      const _localColorTheme = (colorMode === 'dark') ? darkTheme : lightTheme;
+      setLocalColorTheme(_localColorTheme);
+  }, [colorTheme])
+
   useOutsideClick({
-    //@ts-ignore
     ref: ref,
     handler: () => setIsVisible(false),
   })
@@ -64,7 +73,6 @@ const AppDatePicker: FC<Props> = ({ icon, onDateSelect, prePos }) => {
         </Box>
         {isVisible && (
           <Box
-            // @ts-ignore
             ref={ref}
             position='absolute'
             // w='322px'
@@ -81,7 +89,7 @@ const AppDatePicker: FC<Props> = ({ icon, onDateSelect, prePos }) => {
             transition='.2s'
             zIndex={1}
           >
-            <AppDateCalendar onDateSelect={(date) => onSelectDate(date)} />
+            <AppDateCalendar onDateSelect={(date) => onSelectDate(date)} localColorTheme={localColorTheme}/>
           </Box>
         )}
       </Box>
